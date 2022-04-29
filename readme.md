@@ -23,7 +23,7 @@ PORT: <br>
 Upload it to whatever hosting service.
 Install dependencies
 
-Finally, write run `npm run admin` to create a root account with default passcode 'admin'.
-Start the server with `npm run serve`.
-Then login as this user on the website to setup everything, including another root account with a safe passcode which you will use.
-Then run `npm run rem_admin` to remove the account created by `npm run admin`.
+Finally, write run `npm run admin` to create a root account with default passcode 'admin' to let you login.<br>
+Start the server with `npm run serve`.<br>
+Then login as this user on the website to setup everything, including another root account with a safe passcode which you will use as your admin account.<br>
+Then run `npm run rem_admin` to remove the account created by `npm run admin`.<br>
