@@ -5,6 +5,10 @@ import { messageApiEndpoint } from "./send.post.js"
 
 const indexRouter = new Router()
 
+indexRouter.get('/',(req,res) => {
+  res.redirect('/login')
+})
+
 indexRouter.use(loginRouter)
 indexRouter.use(genfaRouter)
 indexRouter.use(messageApiEndpoint)
