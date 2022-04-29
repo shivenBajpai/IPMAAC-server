@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head.ejs') %> 
+    <link rel="stylesheet" href="css/login.css">
+  </head>
+<body>
+  <%- include('partials/navbar.ejs') %> 
+  <div class="main-container">
+  <div class="main">
+    <p>Entah the right passcode or I will send you to jesus</p>
+    <form action="./login" method="POST">
+      <input type="text" name="pass" placeholder="mm give passcode yes...">
+      <button type="submit">
+        Yus
+      </button>
+    </form>
+    <p id="error" style="margin-top: 5vh;"><%= error %></p>
+  </div>
+  </div>
+  <%- include('partials/footer.ejs') %> 
+  <script>
+    // This script blinks the error message
+    var error = document.getElementById('error')
+    setInterval(() => {if(error.style.visibility === 'hidden') error.style.visibility = 'visible'; else error.style.visibility = 'hidden'} , 750)
+  </script>
+</body>
+</html>

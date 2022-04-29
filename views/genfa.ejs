@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head.ejs') %>
+    <link rel="stylesheet" href="css/genfa.css">
+  </head>
+<body>
+  <%- include('partials/navbar.ejs') %>
+  
+  <div class="main-container">
+    <div class="main">
+      <form onsubmit="handleForm();return false">
+
+        <fieldset>
+          <legend>Enter Message to be sent:</legend>
+
+          <label for="channel">Select Which channel you want to send to:</label>
+          <select id="channel" name="channel">
+            <% channels.forEach(element => { %>
+              <option value="<%= element.id %>"> <%= '#'+element.name %> </option>
+            <% }) %>
+          </select>
+
+          <label for="person">Select who you want the message to be sent by:</label>
+          <select name="person" id="person">
+            <% persons.forEach(element => { %>
+             <option value="<%= element._id %>"> <%= element.name %> </option>
+            <% }) %>
+          </select>
+
+          <textarea name="message" id="message" rows="10" placeholder="Enter message"></textarea>
+
+          <button id="btn" type="submit"> Send! </button>
+
+          <div id="help">
+            <p>
+              <b>Message Help:</b>
+
+              Your message should <b>NOT</b> be longer than 2000 charachters<br>
+              <br>
+              If you want to ping someone, get their id and then type this<br>
+              &lt@<b>ThePerson'sID</b>&gt<br>
+              <br>
+              Do note this is not referring to the discord id e.g Turtle#9990<br>
+              This is referring to the 18 digit Unique ID for each person<br>
+              <br>
+              follow <a href="https://www.businessinsider.in/tech/how-to/how-to-find-your-unique-discord-id-and-what-you-can-use-it-for/articleshow/89604351.cms">this guide</a> for help: <br>
+              <br>
+              Things like bold/italic modifiers still work. Theres just no preview  <br>
+              Info on how to link to channels coming soon.<br>
+              </p>
+          </div>
+        </fieldset>
+
+      </form>
+    </div>
+  </div>
+
+  <%- include('partials/footer.ejs') %>
+
+  <script>
+
+    var message = document.getElementById('message')
+    var btn = document.getElementById('btn')
+
+    function handleForm() {
+      if (message.value.length > 2000) {window.alert('Message longer than 2000 Charachters! Make it shorter.'); return}
+
+      let params = {
+        message: message.value,
+        channel: document.getElementById('channel').value,
+        person: document.getElementById('person').value
+      }
+      console.log(params)
+
+      const request = new XMLHttpRequest();
+      request.open("POST", "/send");
+			request.setRequestHeader('Content-type', 'application/json');
+			request.send(JSON.stringify(params));
+			console.log("sent")
+
+      message.value = ""
+
+      btn.innerText = "Sent!"
+      btn.style.color = '#57B82A'
+
+      setTimeout(() => {
+        btn.innerText = "Send"
+        btn.style.color = "inherit"
+      },1000)
+
+      return
+    } 
+  </script>
+</body>
+</html>

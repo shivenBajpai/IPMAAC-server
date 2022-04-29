@@ -1,0 +1,4 @@
+*.env
+/node_modules/
+/manual_upload.js
+/alt.js

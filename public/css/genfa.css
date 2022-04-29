@@ -1,0 +1,84 @@
+::placeholder {
+  color: var(--accent2);
+  opacity: 1; 
+}
+
+:-ms-input-placeholder { /* Edge and IE */
+  color: var(--accent2);
+}
+
+.main {
+  min-width: 60%;
+  max-width: 60%;
+  min-height: 50%;
+  max-height: 50%;
+  text-align: left;
+  padding: 2em 4em;
+}
+
+.main-container {
+  padding: 1em 0em;
+}
+
+legend {
+  color:var(--offwhite);
+}
+
+fieldset {
+  border-color:var(--accent2);
+  border-style: dashed;
+}
+
+select {
+  display: block;
+  margin-top: 1em;
+  background-color: var(--accent1);
+  border: none;
+  color: inherit;
+  font-size: 0.75em;
+  padding: 0.25em;
+}
+
+textarea {
+  display: block;
+  margin-top: 1em;
+  background-color: var(--accent1);
+  color: inherit;
+  width:100%;
+  resize: none;
+  border: none;
+  font-size: 0.75em;
+}
+
+label {
+  margin-top: 1em;
+  display: block;
+  font-size: 0.75em;
+}
+
+*:focus {
+  outline: none
+}
+
+button {
+  margin-top: 1em;
+  border:none;
+  color:inherit;
+  background-color:var(--accent1);
+  font-size: 0.75em;
+  padding: 0.5em 1em;
+  outline:none;
+}
+
+#help {
+  width: calc(100% - 0.5em);
+  background-color: var(--accent1);
+  padding: 0.5em 0em 0em 0.5em;
+  color: var(--offwhite);
+  font-size: 0.75em;
+  margin-top: 1em;
+}
+
+p>a {
+  color:var(--accent2)
+}
