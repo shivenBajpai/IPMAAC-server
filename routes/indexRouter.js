@@ -5,6 +5,7 @@ import { messageApiEndpoint } from "./send.post.js"
 
 const indexRouter = new Router()
 
+// root route has no page, redirecting users to /login
 indexRouter.get('/',(req,res) => {
   res.redirect('/login')
 })

@@ -4,6 +4,8 @@ import indexRouter from "./routes/indexRouter.js"
 import mongoose from "mongoose"
 
 const app = express()
+
+// Connect to database
 mongoose.connect(
   process.env.DATABASE_URL,
   (e) => {
