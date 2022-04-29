@@ -5,7 +5,7 @@ import mongoose from "mongoose"
 
 const app = express()
 mongoose.connect(
-  `mongodb+srv://Server:${process.env.PASSWORD}@main.80zej.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
+  process.env.DATABASE_URL,
   (e) => {
     console.log(`connected to database at ${mongoose.connection.host}`)
   },

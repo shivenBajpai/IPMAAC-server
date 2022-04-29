@@ -1,4 +1,4 @@
 *.env
 /node_modules/
-/manual_upload.js
-/alt.js
+/utils/alt.js
+/utils/manual_upload.js

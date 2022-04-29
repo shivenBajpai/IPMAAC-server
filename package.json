@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx nodemon",
-    "run": "node index.js"
+    "serve": "node index.js",
+    "admin": "node ./utils/create_root.js",
+    "rem_admin": "node ./utils/remove_root.js"
   },
   "author": "Shiven Bajpai <shiven.bajpai@gmail.com>",
   "license": "ISC",
