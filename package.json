@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "npx nodemon",
-    "serve": "node index.js",
+    "start": "node index.js",
     "admin": "node ./utils/create_root.js",
     "rem_admin": "node ./utils/remove_root.js"
   },

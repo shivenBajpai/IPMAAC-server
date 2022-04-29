@@ -19,13 +19,8 @@ messageApiEndpoint.post("/send", jsonParser, async (req, res) => {
     avatar_url: person.avatar,
   }
 
-  console.log(params)
-  console.log(channel)
-  console.log(person)
-
   tiny.post({ url: channel[0].url, data: params }, (err, res_b) => {
     if (err) throw err
-    else console.log("great success")
   })
 })
 
